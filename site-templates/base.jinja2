@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['\\(','\\)']],
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{% block title %}{% if title %}{{title}} | {% endif %}{% endblock %}Mathe für Nicht-Freaks</title>
+</head>
+<body>
+  <h1>Mathe für Nicht-Freaks</h1>
+  <hr/>
+  {% for entry in header %}<a href="{{entry.url}}">{{entry.title}}</a> {% endfor %}
+  <hr/>
+  {% block content %}{{body}}{% endblock %}
+  <hr/>
+  {% for entry in footer %}<a href="{{entry.url}}">{{entry.title}}</a> {% endfor %} | © {% if year %}{{year}}{% else %}2025{% endif %} Diese Seite steht unter der <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"> Lizenz und wird mit <a href="??">Github</a> verwaltet. Dort gibt es auch eine Versionsgeschichte.
+</body>
+</html>

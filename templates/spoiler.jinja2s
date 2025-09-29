@@ -1,0 +1,5 @@
+name: verstaendnisfrage
+<div>
+  <div><b>Verständnisfrage:</b> {{ obj.attributes.frage }}</div>
+  <div><b>Antwort: </b>{{ obj }}</div>
+</div>

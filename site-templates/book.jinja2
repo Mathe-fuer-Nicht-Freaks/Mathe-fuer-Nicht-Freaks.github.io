@@ -1,0 +1,12 @@
+{% extends "base.jinja2" %}
+
+{% block content %}
+  <h1>{{book.title}}</h1>
+  {% if book.toc %}
+  <ul>
+    {% for entry in book.toc %}
+    <li><a href="{{entry.url}}">{{entry.title}}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}

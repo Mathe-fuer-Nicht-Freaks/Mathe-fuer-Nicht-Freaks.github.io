@@ -1,0 +1,54 @@
+\documentclass[a4paper]{book}
+
+\newif\ifplastex
+\plastexfalse
+
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\usepackage[svgnames]{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Complex}{\C}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+
+\ifplastex
+  \usepackage{spoiler}
+\else
+  \usepackage[hidelinks]{hyperref}
+  \newtheorem*{verstaendnisfrageQuery}{Verständnisfrage}
+  \theoremstyle{definition}
+  \newtheorem*{antwort}{Antwort}
+  \newenvironment{verstaendnisfrage}[1]{
+    \begin{verstaendnisfrageQuery}
+      #1
+    \end{verstaendnisfrageQuery}
+    \Begin{antwort}
+    }{\end{antwort}}
+\fi
+
+\title{Mathe für Nicht-Freaks}
+
+\begin{document}
+\maketitle
+\tableofcontents\newpage
+
+\part{Alltagsabenteuer}
+\label{Altagabenteuer}
+%\include{articles/alltag/01-Wichteln.tex}
+%\include{articles/alltag/02-WG-Casting.tex}
+
+\end{document}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
