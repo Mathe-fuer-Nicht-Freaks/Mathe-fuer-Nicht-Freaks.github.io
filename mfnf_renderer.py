@@ -49,10 +49,13 @@ toc = get_toc()
 
 site_config = {
     'header': [{"url": 'index.html', "title": "Home"}],
-    'footer': [{"url": 'impressum.html', "title": "Impressum"}],
+    'footer': [{"url": 'impressum.html', "title": "Impressum"}, {"url": 'datenschutz.html', "title": "Datenschutz"}],
 }
 
-static_sites = [{"name": "impressum", "meta": {"title": "Impressum"}}]
+static_sites = [
+    {"name": "impressum", "meta": {"title": "Impressum"}},
+    {"name": "datenschutz", "meta": {"title": "Datenschutz"}},
+]
 
 site_info = []
 
