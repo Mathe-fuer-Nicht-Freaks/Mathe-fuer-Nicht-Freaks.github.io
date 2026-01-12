@@ -16,10 +16,10 @@ jobs:
           python-version: '3.x'
           cache: 'pip'
 
-      - name: Install libxml2-dev and libxslt1-dev libjpeg-dev
+      - name: Install libxml2-dev and libxslt1-dev libjpeg-dev texlive
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxml2-dev libxslt1-dev libjpeg-dev
+          sudo apt-get install -y libxml2-dev libxslt1-dev libjpeg-dev texlive
 
       - name: Install dependencies
         run: |
