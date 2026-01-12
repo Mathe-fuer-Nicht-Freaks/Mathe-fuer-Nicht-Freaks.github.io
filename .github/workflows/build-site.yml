@@ -16,6 +16,11 @@ jobs:
           python-version: '3.x'
           cache: 'pip'
 
+      - name: Install libxml2-dev and libxslt1-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-dev libxslt1-dev
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
