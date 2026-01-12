@@ -7,13 +7,13 @@ BUILD_DIR=build
 PLASTEX_OUTPUT=$(BUILD_DIR)/plastex
 MFNF_SITE=$(BUILD_DIR)/site
 
-PLASTEX_STATIC_FILES=images,js,styles
+PLASTEX_STATIC_FILES=$(PLASTEX_OUTPUT)/images $(PLASTEX_OUTPUT)/js $(PLASTEX_OUTPUT)/styles
 
 .PHONY: all
 all:
 	$(PLASTEX) --split-level=0 --packages-dirs=packages --extra-templates=templates --theme=mfnftheme --xml --dir=$(PLASTEX_OUTPUT) $(JOB_NAME).tex
 	mkdir -p $(MFNF_SITE)
-	cp -r $(PLASTEX_OUTPUT)/{$(PLASTEX_STATIC_FILES)} $(MFNF_SITE)
+	cp -r $(PLASTEX_STATIC_FILES) $(MFNF_SITE)
 	$(MFNF_RENDERER) $(JOB_NAME) "$(PLASTEX_OUTPUT)" "$(MFNF_SITE)"
 
 .PHONY: clean
