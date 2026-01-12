@@ -19,7 +19,7 @@ jobs:
       - name: Install libxml2-dev and libxslt1-dev
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxml2-dev libxslt1-dev
+          sudo apt-get install -y libxml2-dev libxslt1-dev python3-lxml
 
       - name: Install dependencies
         run: |
