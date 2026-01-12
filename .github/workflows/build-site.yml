@@ -1,0 +1,34 @@
+name: Build Site
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build site
+        run: make all
+
+      - name: Extract Generated Site
+        run: cd build && zip site.zip site
+
+      - name: Upload Generated Site as an artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: build/site.zip
