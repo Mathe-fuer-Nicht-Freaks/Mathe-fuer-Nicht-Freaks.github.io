@@ -30,7 +30,7 @@ jobs:
         run: make all
 
       - name: Extract Generated Site
-        run: cd build && zip site.zip site
+        run: cd build && zip -r site.zip site
 
       - name: Upload Generated Site as an artefact
         uses: actions/upload-artifact@v4
